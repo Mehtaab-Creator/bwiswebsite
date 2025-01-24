@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be My Valentine</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #ffe4e1;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      color: #ff6f61;
+    }
+
+    #buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #yes, #oliver, #luna, #tellMe, #callMe {
+      background-color: #ff6f61;
+      color: white;
+    }
+
+    #no, #maybe {
+      background-color: #cccccc;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    img {
+      width: 300px;
+      height: auto;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="page1">
+    <h1>Hi Gael, will you be my Valentine?</h1>
+    <img src="https://i.imgur.com/g8SNAXt.gif">
+    <div id="buttons">
+      <button id="yes" onclick="showPage(2)">Yes</button>
+      <button id="no" class="move">No</button>
+    </div>
+  </div>
+
+  <div id="page2" class="hidden">
+    <h1>Yupppiii! I'm so excited!!! Oliver and Luna also want to be your Valentine.. who will you pick?</h1>
+    <img src="https://i.imgur.com/rF55moR.png">
+    <div id="buttons">
+      <button id="oliver" onclick="showPage(3)">Oliver</button>
+      <button id="luna" onclick="showPage(3)">Luna</button>
+    </div>
+  </div>
+
+  <div id="page3" class="hidden">
+    <h1>WHY DIDNT YOU SAY BOTH?!?! Is it because you secretly love Tuti more?!</h1>
+    <img src="https://i.imgur.com/3BbIwfQ.png">
+    <div id="buttons">
+      <button id="yes" onclick="showPage(4)">Yes</button>
+      <button id="no" class="move">No</button>
+    </div>
+  </div>
+
+  <div id="page4" class="hidden">
+    <h1>OMG I KNEW IT. The secret is out....do you want to know another secret..?</h1>
+    <img src="https://i.imgur.com/XTA9czp.png">
+    <div id="buttons">
+      <button id="yes" onclick="showPage(5)">Yes</button>
+      <button id="no" class="move">No</button>
+    </div>
+  </div>
+
+  <div id="page5" class="hidden">
+    <h1>Did you try clicking no?</h1>
+    <img src="https://i.imgur.com/QZLZzvB.png">
+    <div id="buttons">
+      <button id="no" onclick="showPage(6)">No</button>
+      <button id="maybe" class="move">Maybe</button>
+    </div>
+  </div>
+
+  <div id="page6" class="hidden">
+    <h1>Hmmmm suspicious... ok whatever.... so about the secret.....</h1>
+    <img src="https://i.giphy.com/wr7oA0rSjnWuiLJOY5.webp">
+    <button id="tellMe" onclick="showPage(7)">Tell Me</button>
+  </div>
+
+  <div id="page7" class="hidden">
+    <h1>DO YOU WANNA GO TO THE TYLER CONCERT WITH ME ON FEB 15th?!</h1>
+    <img src="https://i.imgur.com/g6BSywL.png">
+    <button id="callMe">CALL ME</button>
+  </div>
+
+  <script>
+    function showPage(pageNumber) {
+      document.querySelectorAll('div').forEach(div => div.classList.add('hidden'));
+      document.getElementById('page' + pageNumber).classList.remove('hidden');
+    }
+
+    document.querySelectorAll(".move").forEach(button => {
+      button.addEventListener("mouseover", function() {
+        this.style.position = "absolute";
+        this.style.left = Math.random() * (window.innerWidth - this.offsetWidth) + "px";
+        this.style.top = Math.random() * (window.innerHeight - this.offsetHeight) + "px";
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
